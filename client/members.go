@@ -79,6 +79,9 @@ func (c *MemberService) GetTeamMembers(team string) ([]MemberResponse, error) {
 func (c *MemberService) GetTeamMembersByID(team, id string) (*MemberResponse, error) {
 	path := fmt.Sprintf("/api/account/teams/%s/members/%s/", team, id)
 	body, err := c.client.newRequestDo("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
 	var s MemberResponse
 	err = json.Unmarshal(body.BodyBytes, &s)
 	if err != nil {

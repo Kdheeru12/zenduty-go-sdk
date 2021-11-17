@@ -15,7 +15,6 @@ type errorResponse struct {
 	Error *Error `json:"error"`
 }
 
-// Error represents an error response from the PagerDuty API.
 type Error struct {
 	ErrorResponse *Response
 	Code          int         `json:"code,omitempty"`

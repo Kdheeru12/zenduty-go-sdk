@@ -14,9 +14,11 @@ type Restrictions struct {
 	Unique_Id      string `json:"unique_id"`
 }
 type Users struct {
-	User      string `json:"user"`
-	Position  int    `json:"position"`
+	User      string `json:"user,omitempty"`
+	Position  int    `json:"position,omitempty"`
 	Unique_Id string `json:"unique_id"`
+	Username  string `json:"username,omitempty"`
+
 }
 
 type Overrides struct {
